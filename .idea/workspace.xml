@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../../IPs/java-todo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../IPs/saf-tec-departments" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../java-todo" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../saftec-departments" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../spark-blog" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../../java-todolist" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="777" />
+    <option name="y" value="23" />
+    <option name="width" value="663" />
+    <option name="height" value="873" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
