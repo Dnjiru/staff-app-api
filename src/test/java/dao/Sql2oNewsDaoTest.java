@@ -32,6 +32,12 @@
 //    }
 //
 //    @Test
+//    public void addingNewsSetsId() throws Exception {
+//        News testNews = setupNews();
+//        assertEquals(1, testNews.getId());
+//    }
+//
+//    @Test
 //    public void getAll() throws Exception {
 //        News news1 = setupNews();
 //        News news2 = setupNews();
@@ -65,6 +71,46 @@
 //        assertEquals(0, newsDao.getAll().size());
 //    }
 //
+//    @Test
+//    public void NewssAreReturnedInCorrectOrder() throws Exception {
+//        Department testDepartment = setupDepartment();
+//        DepartmentDao.add(testDepartment);
+//        News testNews = new News("Coding 101","Mwaniki Daudi",1);
+//        NewsDao.add(testNews);
+//        try {
+//            Thread.sleep(2000);
+//        }
+//        catch (InterruptedException ex){
+//            ex.printStackTrace();
+//        }
+//
+//        News testSecondNews = new News("Thriving at Work place","Daudi",2);
+//        NewsDao.add(testSecondNews);
+//
+//        try {
+//            Thread.sleep(2000);
+//        }
+//        catch (InterruptedException ex){
+//            ex.printStackTrace();
+//        }
+//
+//        News testThirdNews = new News("Simple Exercises at the office","Mwaniki ",3);
+//        NewsDao.add(testThirdNews);
+//
+//        try {
+//            Thread.sleep(2000);
+//        }
+//        catch (InterruptedException ex){
+//            ex.printStackTrace();
+//        }
+//
+//        News testFourthNews = new News("Coding 103","Sam",1);
+//        NewsDao.add(testFourthNews);
+//
+////        assertEquals(4, NewsDao.getAllNewssByDepartment(testDepartment.getId()).size()); //it is important we verify that the list is the same size.
+////        assertEquals("I prefer home cooking", NewsDao.getAllNewssByDepartmentSortedNewestToOldest(testDepartment.getId()).get(0).getContent());
+//    }
+//
 //    //helpers
 //
 //    public News setupNews() {
@@ -80,7 +126,7 @@
 //    }
 //
 //    public Department setupDepartment() {
-//        Department department = new Department("Technology", "Heart of Safaricom Service Delivery", "845");
+//        Department department = new Department("Technology", "Responsible for building network","890");
 //        departmentDao.add(department);
 //        return department;
 //    }

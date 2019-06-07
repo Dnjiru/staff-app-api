@@ -4,6 +4,8 @@ import models.News;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -29,7 +31,7 @@ public class Sql2oNewsDao implements NewsDao {
     @Override
     public List<News> getAll() {
         try (Connection con = sql2o.open()) {
-            return con.createQuery("SELECT * FROM news")
+            return con.createQuery("SELECT * FROM newss")
                     .executeAndFetch(News.class);
         }
     }
@@ -42,6 +44,37 @@ public class Sql2oNewsDao implements NewsDao {
                     .executeAndFetch(News.class);
         }
     }
+
+
+//    @Override
+//    public List<News> getAllNewssByDepartmentSortedNewestToOldest(int departmentId) {
+//        List<News> unsortedNewss = getAllNewssByDepartment(departmentId);
+//        List<News> sortedNewss = new ArrayList<>();
+//        int i = 1;
+//        for (News news : unsortedNewss){
+//            int comparisonResult;
+//            if (i == unsortedNewss.size()) { //we need to do some funky business here to avoid an arrayindex exception and handle the last element properly
+//                if (news.compareTo(unsortedNewss.get(i-1)) == -1){
+//                    sortedNewss.add(0, unsortedNewss.get(i-1));
+//                }
+//                break;
+//            }
+//
+//            else {
+//                if (news.compareTo(unsortedNewss.get(i)) == -1) { //first object was made earlier than second object
+//                    sortedNewss.add(0, unsortedNewss.get(i));
+//                    i++;
+//                } else if (news.compareTo(unsortedNewss.get(i)) == 0) {//probably should have a tie breaker here as they are the same.
+//                    sortedNewss.add(0, unsortedNewss.get(i));
+//                    i++;
+//                } else {
+//                    sortedNewss.add(0, unsortedNewss.get(i)); //push the first object to the list as it is newer than the second object.
+//                    i++;
+//                }
+//            }
+//        }
+//        return sortedNewss;
+//    }
 
     @Override
     public void deleteById(int id) {

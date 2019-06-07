@@ -38,25 +38,21 @@ public class Sql2oEmployeeDao implements EmployeeDao {
         }
     }
 
-    @Override
-    public List<Department> getAllDepartmentsForAEmployee(int id) {
-        return null;
-    }
-
-    @Override
-    public void update(int id, String newName, String newPosition, String newRole, String newDepartmentId) {
-        String sql = "UPDATE employees SET (name, position, role, departmentId ) = (:name, :position, :role, :departmentId) WHERE id=:id"; //CHECK!!!
-        try (Connection con = sql2o.open()) {
-            con.createQuery(sql)
-                    .addParameter("name", newName)
-                    .addParameter("position", newPosition)
-                    .addParameter("role", newRole)
-                    .addParameter("departmentId", newDepartmentId)
-                    .executeUpdate();
-        } catch (Sql2oException ex) {
-            System.out.println(ex);
-        }
-    }
+//
+//    @Override
+//    public void update(int id, String newName, String newPosition, String newRole, String newDepartmentId) {
+//        String sql = "UPDATE employees SET (name, position, role, departmentId ) = (:name, :position, :role, :departmentId) WHERE id=:id"; //CHECK!!!
+//        try (Connection con = sql2o.open()) {
+//            con.createQuery(sql)
+//                    .addParameter("name", newName)
+//                    .addParameter("position", newPosition)
+//                    .addParameter("role", newRole)
+//                    .addParameter("departmentId", newDepartmentId)
+//                    .executeUpdate();
+//        } catch (Sql2oException ex) {
+//            System.out.println(ex);
+//        }
+//    }
 
 
         @Override
@@ -81,8 +77,13 @@ public class Sql2oEmployeeDao implements EmployeeDao {
             }
         }
 
+    @Override
+    public void update(int employeeToEditId, String newContent, int newDepartmentId) {
 
     }
+
+
+}
 
 
 

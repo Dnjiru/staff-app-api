@@ -1,6 +1,7 @@
 package dao;
 
 import models.Department;
+import models.Employee;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
@@ -44,8 +45,9 @@ public class Sql2oDepartmentDao implements DepartmentDao {
         }
     }
 
+
     @Override
-    public void update(int id, String newName, String newDescription, String newEmployee_no) {
+    public void update(int id, String newName, String newDescription, String newEmployee_no ) {
         String sql = "UPDATE departments SET (name, description, employee_no ) = (:name, :description, :employee_no ) WHERE id=:id"; //CHECK!!!
         try (Connection con = sql2o.open()) {
             con.createQuery(sql)
