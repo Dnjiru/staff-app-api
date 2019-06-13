@@ -4,13 +4,11 @@ import java.util.Objects;
 
 public class News {
     private String content;
-    private String writtenBy;
     private int id;
     private int departmentId; //will be used to connect Department to News(One to many)
 
-    public News(String content, String writtenBy, int departmentId) {
+    public News(String content,  int departmentId) {
         this.content = content;
-        this.writtenBy = writtenBy;
         this.departmentId = departmentId;
     }
 
@@ -22,13 +20,6 @@ public class News {
         this.content = content;
     }
 
-    public String getWrittenBy() {
-        return writtenBy;
-    }
-
-    public void setWrittenBy(String writtenBy) {
-        this.writtenBy = writtenBy;
-    }
 
     public int getId() {
         return id;
@@ -53,12 +44,11 @@ public class News {
         News news = (News) o;
         return id == news.id &&
                 departmentId == news.departmentId &&
-                Objects.equals(content, news.content) &&
-                Objects.equals(writtenBy, news.writtenBy);
+                Objects.equals(content, news.content);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(content, writtenBy, id, departmentId);
+        return Objects.hash(content,id, departmentId);
     }
 }

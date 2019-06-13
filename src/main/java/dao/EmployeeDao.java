@@ -4,23 +4,16 @@ import models.Employee;
 import java.util.List;
 
 public interface EmployeeDao {
-
-    //create;
+    //create
     void add(Employee employee);
-//    void addEmployeeToDepartment(Employee employee, Department department);
+    void addEmployeeToDepartment(Employee employee, Department department);
 
     //read
     List<Employee> getAll();
-//    Department findById(int id);
-//    List<Department> getAllDepartmentsForAEmployee(int id);
-
-    //update
-//    void update(int id, String name, String position, String role, String departmentId);
-
+    List<Department> getAllDepartmentsForAEmployee(int id);
+    Employee findById(int id);
 
     //delete
     void deleteById(int id);
     void clearAll();
-
-    void update(int employeeToEditId, String newContent, int newDepartmentId);
 }

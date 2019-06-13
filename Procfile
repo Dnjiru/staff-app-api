@@ -1,2 +1,2 @@
-web: ./build/install/staff-app-api/bin/staff-app-api
+web: ./build/install/staffapp1/bin/staffapp1
 

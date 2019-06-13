@@ -4,16 +4,15 @@ import java.util.Objects;
 
 public class Employee {
     private String name;
-    private String position;
+    private String ek;
     private String role;
-    private int departmentId;
     private int id;
 
-    public Employee(String name, String position, String role, int departmentId) {
+    public Employee(String name, String ek, String role) {
         this.name = name;
-        this.position = position;
+        this.ek = ek;
         this.role = role;
-        this.departmentId = departmentId;
+
     }
 
     public String getName() {
@@ -24,12 +23,12 @@ public class Employee {
         this.name = name;
     }
 
-    public String getPosition() {
-        return position;
+    public String getEk() {
+        return ek;
     }
 
-    public void setPosition(String position) {
-        this.position = position;
+    public void setEk(String ek) {
+        this.ek = ek;
     }
 
     public String getRole() {
@@ -40,13 +39,6 @@ public class Employee {
         this.role = role;
     }
 
-    public int getDepartmentId() {
-        return departmentId;
-    }
-
-    public void setDepartmentId(int departmentId) {
-        this.departmentId = departmentId;
-    }
 
     public int getId() {
         return id;
@@ -61,15 +53,14 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return departmentId == employee.departmentId &&
-                id == employee.id &&
-                Objects.equals(name, employee.name) &&
-                Objects.equals(position, employee.position) &&
-                Objects.equals(role, employee.role);
+        return id == employee.id &&
+                name.equals(employee.name) &&
+                ek.equals(employee.ek) &&
+                role.equals(employee.role);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, position, role, departmentId, id);
+        return Objects.hash(name, ek, role, id);
     }
 }
